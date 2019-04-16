@@ -1,0 +1,21 @@
+HI JARED
+
+I MADE THE VIDEOS REALLY FAST ON ACCIDENT WITH THE WRONG FLAG
+
+PLEASE USE THE FOLLOWING ON THE VIDEOS WHEN YOU WANT TO ACTUALLY USE THEM. 
+
+ffmpeg -i stereo_left_green.mp4 -vf  "setpts=4*PTS" stereo_left_green_slow.mp4 
+ffmpeg -i stereo_right_green.mp4 -vf  "setpts=4*PTS" stereo_right_green_slow.mp4 
+
+ffmpeg -i stereo_left_lime.mp4 -vf  "setpts=4*PTS" stereo_left_lime_slow.mp4 
+ffmpeg -i stereo_right_lime.mp4 -vf  "setpts=4*PTS" stereo_right_lime_slow.mp4 
+
+ffmpeg -i stereo_left_pink.mp4 -vf  "setpts=4*PTS" stereo_left_pink_slow.mp4 
+ffmpeg -i stereo_right_pink.mp4 -vf  "setpts=4*PTS" stereo_right_pink_slow.mp4 
+
+ffmpeg -i stereo_left_purple.mp4 -vf  "setpts=4*PTS" stereo_left_purple_slow.mp4 
+ffmpeg -i stereo_right_purple.mp4 -vf  "setpts=4*PTS" stereo_right_purple_slow.mp4 
+
+ffmpeg -i stereo_left_yellow.mp4 -vf  "setpts=4*PTS" stereo_left_yellow_slow.mp4 
+ffmpeg -i stereo_right_yellow.mp4 -vf  "setpts=4*PTS" stereo_right_yellow_slow.mp4 
+
