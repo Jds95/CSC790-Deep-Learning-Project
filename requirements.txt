@@ -1,0 +1,13 @@
+python 3.5+
+tensorflow
+  pip install tensorflow or pip install tensorflow-gpu
+OpenCV 4
+pip install opencv-python
+pip install opencv-contrib-python
+NumPY
+pip install numpy
+TQDM
+pip install tqdm
+Pillow
+pip install pillow
+There may be others as I did not install this on a clean env
