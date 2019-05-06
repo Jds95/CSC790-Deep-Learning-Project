@@ -103,6 +103,7 @@ def get_ground_truth_annotation(frame, classes):
 def build_train_dataset(dir, header):
 	lReader = cv2.VideoCapture(dir+LEFT_VIDEO)
 	rReader = cv2.VideoCapture(dir+RIGHT_VIDEO)
+	stitcher = Stitcher()
 	classes, pal, bound = get_color_palette()
 
 	print("Processing the first ", NUM_FRAMES, " frames from the given video which has ", int(lReader.get(cv2.CAP_PROP_FRAME_COUNT)), " frames.")
@@ -130,6 +131,7 @@ def build_train_dataset(dir, header):
 def build_test_dataset(dir, header, labels):
 	lReader = cv2.VideoCapture(dir+LEFT_VIDEO)
 	rReader = cv2.VideoCapture(dir+RIGHT_VIDEO)
+	stitcher = Stitcher()
 	print("Processing the first ", NUM_FRAMES, " frames from the given video which has ", int(lReader.get(cv2.CAP_PROP_FRAME_COUNT)), " frames.")
 
 	for i in tqdm(range(NUM_FRAMES)):

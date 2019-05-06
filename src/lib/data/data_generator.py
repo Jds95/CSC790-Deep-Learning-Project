@@ -110,7 +110,7 @@ _DATASETS_INFORMATION = {
 	'cityscapes': _CITYSCAPES_INFORMATION,
 	'pascal_voc_seg': _PASCAL_VOC_SEG_INFORMATION,
 	'ade20k': _ADE20K_INFORMATION,
-	'ADA_SEG': _ADA_SEG_INFORMATION
+	'ADA': _ADA_SEG_INFORMATION
 }
 
 # Default file pattern of TFRecord of TensorFlow Example.
