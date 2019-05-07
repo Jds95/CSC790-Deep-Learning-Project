@@ -1,8 +1,17 @@
-rem setup the paths
-set CHECKPOINT_NAME=model.ckpt-942
-set CHECKPOINT_PATH=%cd%\models\research\deeplab\datasets\ADA\exp\train_on_trainval_set\train\
+echo off
+cd models\research\deeplab
+cd ..
+rem Set up the working environment.
+set CURRENT_DIR=%cd%
+set WORK_DIR=%CURRENT_DIR%\deeplab
 
-python export_model.py ^
+rem setup the paths
+set CHECKPOINT_NAME=model.ckpt-951
+
+set CHECKPOINT_PATH=%WORK_DIR%\datasets\ADA\exp\train_on_trainval_set\train
+
+
+python %WORK_DIR%\export_model.py ^
 --checkpoint_path=%CHECKPOINT_PATH%\%CHECKPOINT_NAME% ^
 --export_path=graphs\
 --num_classes=4 ^
