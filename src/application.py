@@ -70,7 +70,7 @@ if(__name__=="__main__"):
 			seg_d_map = seg.zip(seg_map, d_map)
 			
 			#STEP-05: OPTIONAL - Use seg map to apply color segmentation to d_map
-			3DSeg_map = seg.apply_colormap(seg_map, d_map)
+			DSeg_map = seg.apply_colormap(seg_map, d_map)
 			
 			#==============DEMO PURPOSES ONLY==================
 			#display output
@@ -79,7 +79,7 @@ if(__name__=="__main__"):
 			cv2.imshow('Original Frames', og_frames)
 			cv2.imshow('Depth Map', d_map)
 			cv2.imshow('Color Map', color_map)
-			cv2.imshow('3D Segmentation', 3DSeg_map)
+			cv2.imshow('3D Segmentation', DSeg_map)
 			key = cv2.waitKey(10)
 			if(key == ord('q')):
 				break
