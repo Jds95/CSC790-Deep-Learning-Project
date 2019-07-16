@@ -1,9 +1,12 @@
+import numpy as np
+import cv2
+
 # import the necessary packages
 import numpy as np
 import imutils
 import cv2
 
-class Stitcher:
+class ViewSynthisizer:
 	def __init__(self):
 		# determine if we are using OpenCV v3.X and initialize the
 		# cached homography matrix
@@ -87,3 +90,30 @@ class Stitcher:
 
 		# otherwise, no homograpy could be computed
 		return None
+
+
+if(__name__=="__main__"):
+	synth = ViewSynthisizer()
+	lReader = cv2.VideoCapture('l.avi')
+	rReader = cv2.VideoCapture('r.avi')
+	ret1 = True
+	ret2 = True
+	while(ret1 and ret2):
+		ret1, lFrame = lReader.read()
+		ret2, rFrame = rReader.read()
+		
+		if(ret1 and ret2):
+			#build the stitched image
+			pan_frame = synth.stitch([lFrame, rFrame])
+			
+			#Show the frame for demo purposes
+			og = np.hstack([lFrame, rFrame])
+			cv2.imshow('original stereo input', og)
+			cv2.imshow('synth output', pan_frame)
+			key = cv2.waitKey(40)
+			if(key == ord('q')):
+				break
+
+	lReader.release()
+	rReader.release()
+	cv2.destroyAllWindows()
